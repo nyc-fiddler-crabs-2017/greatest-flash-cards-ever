@@ -1,4 +1,6 @@
 class Guess < ApplicationRecord
+  validates :card_id, :round_id, :user_input, :first_try, :presence => true
+
   belongs_to :card
   belongs_to :round
 
@@ -8,6 +10,6 @@ class Guess < ApplicationRecord
 
   # first_try = true if correct?
 
-  
+
 
 end
