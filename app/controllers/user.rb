@@ -1,12 +1,12 @@
-get '/new' do
+get '/users/new' do
   erb :"users/new"
 end
 
-get '/login' do
+get '/users/login' do
   erb :"users/login"
 end
 
-post '/new' do
+post '/users/new' do
   @user = User.new(params[:email])
   @user.password = params[:password]
 
@@ -21,7 +21,7 @@ post '/new' do
   end
 end
 
-post '/login' do
+post '/users/login' do
   @user = User.authenticate(params[:user][:email], params[:password])
   if @user
     session[:user_id] = @user.id
