@@ -1,0 +1,4 @@
+<% Deck.all.each do |deck| %>
+<form action="<%= "/decks/#{deck.id}" %>" method="post"
+<h2><input type="submit" value="<%= deck.category %>"></h2>
+<% end %>

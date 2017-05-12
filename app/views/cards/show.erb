@@ -1,0 +1,13 @@
+<h1><%= @round.deck.category %></h1>
+
+<h2><%= @card.question %></h2>
+
+<form action="<%= "/rounds/#{@round.id}/cards/#{@card.id}/guesses/new" %>" method="post" >
+  <input type="text" name="guess[user_input]" placeholder="Enter your guess">
+  <input type="submit" value="submit your guess">
+</form>
+
+<% if @guess %>
+<h2>Correct Answer:<%= @card.answer %></h2>
+<a href="/rounds/#{@round.id}/cards/#{@card.id+1}"> Next </a>
+<% end %>
