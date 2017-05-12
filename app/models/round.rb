@@ -8,8 +8,13 @@ class Round < ApplicationRecord
     deck.length == guesses.select{ |guess| guess.correct? }.length
   end
 
-  # def first_try_correct
-    # guesses.select{ |guess| }
-  # end
+  def first_try_correct
+    guesses.count{ |guess| guess.first_try }
+  end
 
+  def total_guesses
+    guesses.length
+  end
+
+  
 end
