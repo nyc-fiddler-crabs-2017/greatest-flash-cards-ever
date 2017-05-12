@@ -6,5 +6,6 @@ class CreateCards < ActiveRecord::Migration[5.0]
       t.references :deck, :null => false
 
       t.timestamps(null: false)
+    end
   end
 end
