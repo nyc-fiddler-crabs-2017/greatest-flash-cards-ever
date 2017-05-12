@@ -1,0 +1,4 @@
+<% Decks.all.each do |deck| %>
+<h2><a href="<%= "decks/#{deck.id}" %>">
+}"<%= deck.category %></a></h2>
+<% end %>

@@ -16,5 +16,12 @@ class Round < ApplicationRecord
     guesses.length
   end
 
-  
+  # def next_card
+  #   cards.find { |card| !card.answered? }
+  # end
+
+  def unanswered_cards
+    cards.select { |card| !card.answered? }
+  end
+
 end
