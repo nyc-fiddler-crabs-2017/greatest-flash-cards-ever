@@ -1,6 +1,6 @@
 class Round < ApplicationRecord
   validates :user_id, :deck_id, :presence => true
-  
+
 
   belongs_to :user
   belongs_to :deck
@@ -24,7 +24,7 @@ class Round < ApplicationRecord
   # end
 
   def unanswered_cards
-    cards.select { |card| !card.answered? }
+    deck.cards - guesses.select{ |g| g.correct? }.map { |g| g.card }
   end
 
 end

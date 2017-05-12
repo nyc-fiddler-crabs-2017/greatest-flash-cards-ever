@@ -1,9 +1,9 @@
-<h1><%= @round.deck %></h1>
+<h1><%= @round.deck.category %></h1>
 
 <h2><%= @card.question %></h2>
 
-<form action="<%= "/rounds/#{@round.id}/cards/#{card.id}/guesses/new" %>" method="post" >
-  <input type="text" name="guess[input]" placeholder="Enter your guess">
+<form action="<%= "/rounds/#{@round.id}/cards/#{@card.id}/guesses/new" %>" method="post" >
+  <input type="text" name="guess[user_input]" placeholder="Enter your guess">
   <input type="submit" value="submit your guess">
 </form>
 
