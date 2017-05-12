@@ -4,5 +4,6 @@ class CreateDecks < ActiveRecord::Migration[5.0]
       t.string :category, :null => false, :unique => true
 
       t.timestamps(null: false)
+    end
   end
 end
