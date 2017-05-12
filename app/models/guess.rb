@@ -1,12 +1,12 @@
 class Guess < ApplicationRecord
-  validates :card_id, :round_id, :user_input, :first_try, :presence => true
+  validates :card_id, :round_id, :user_input, :presence => true
 
   belongs_to :card
   belongs_to :round
   before_save :validate_first_try
 
   def correct?
-    card.answer == input
+    card.answer == user_input
   end
 
   def validate_first_try
